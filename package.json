@@ -1,0 +1,15 @@
+{
+  "name": "freespace-api-server",
+  "version": "1.0.0",
+  "description": "freespace API server",
+  "main": "index.js",
+  "repository": "https://github.com/Chrystelbrc/freespace-api-server.git",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node ."
+  }
+}
