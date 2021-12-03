@@ -22,52 +22,52 @@ const fetchRandomCoolImage = ({ size }) => {
 exports.generateQRCodeForRoom = ({ roomIndex, size, margin }) => {
 	const qrCodeText = `${QR_CODE_PREFIX}${roomIndex}`;
 
-	return fetchRandomCoolImage({ size }).then((response) => {
-		const backgroundImageBuffer = Buffer.from(response.data, 'base64');
+	// return fetchRandomCoolImage({ size }).then((response) => {
+	// const backgroundImageBuffer = Buffer.from(response.data, 'base64');
 
-		const qrCode = new AwesomeQR({
-			text: qrCodeText,
-			size,
-			margin,
-			correctLevel: QRErrorCorrectLevel.H,
-			// maskPattern: QRMaskPattern.PATTERN000,
-			// version: 1,
-			components: {
-				data: {
-					scale: 0.4,
-					protectors: true,
-				},
-				timing: {
-					scale: 0.4,
-					protectors: true,
-				},
-				alignment: {
-					scale: 0.4,
-					protectors: true,
-				},
-				cornerAlignment: {
-					scale: 0.4,
-					protectors: true,
-				},
+	const qrCode = new AwesomeQR({
+		text: qrCodeText,
+		size,
+		margin,
+		correctLevel: QRErrorCorrectLevel.H,
+		// maskPattern: QRMaskPattern.PATTERN000,
+		// version: 1,
+		components: {
+			data: {
+				scale: 1,
+				protectors: true,
 			},
+			timing: {
+				scale: 1,
+				protectors: true,
+			},
+			alignment: {
+				scale: 1,
+				protectors: true,
+			},
+			cornerAlignment: {
+				scale: 1,
+				protectors: true,
+			},
+		},
 
-			// colorDark: '#000000', // Color of the blocks on the QR code
-			// colorLight: '#ffffff', // Color of the empty areas on the QR code
+		// colorDark: '#000000', // Color of the blocks on the QR code
+		// colorLight: '#ffffff', // Color of the empty areas on the QR code
 
-			autoColor: true,
+		autoColor: false,
 
-			backgroundImage: backgroundImageBuffer,
+		// backgroundImage: backgroundImageBuffer,
 
-			backgroundDimming: 'rgba(255, 255, 255, 0.33)',
-			// gifBackground: undefined,
-			whiteMargin: false,
-			// logoImage: undefined,
-			// logoScale: 0.2,
-			// logoMargin: 6,
-			// logoCornerRadius: 8,
-			// dotScale: 0.4; // DEPRECATED!!,
-		});
-
-		return qrCode.draw();
+		// backgroundDimming: 'rgba(255, 255, 255, 0.5)',
+		// gifBackground: undefined,
+		whiteMargin: false,
+		// logoImage: undefined,
+		// logoScale: 0.2,
+		// logoMargin: 6,
+		// logoCornerRadius: 8,
+		// dotScale: 0.4; // DEPRECATED!!,
 	});
+
+	return qrCode.draw();
+	// });
 };
