@@ -1,17 +1,38 @@
 [
-    {
-        "name": "1",
-        "isFree": true,
-        "userName": null 
-    },
-    {
-        "name": "2",
-        "isFree": true,
-        "userName": null 
-    },
-    {
-        "name": "3",
-        "isFree": true,
-        "userName": null 
-    }
+	{
+		"name": "ONE",
+		"coverFileName": "0.svg"
+	},
+	{
+		"name": "TWO",
+		"coverFileName": "1.svg"
+	},
+	{
+		"name": "THREE",
+		"coverFileName": "2.svg"
+	},
+	{
+		"name": "FOUR",
+		"coverFileName": "3.svg"
+	},
+	{
+		"name": "FIVE",
+		"coverFileName": "4.svg"
+	},
+	{
+		"name": "SIX",
+		"coverFileName": "5.svg"
+	},
+	{
+		"name": "SEVEN",
+		"coverFileName": "6.svg"
+	},
+	{
+		"name": "EIGHT",
+		"coverFileName": "7.svg"
+	},
+	{
+		"name": "NINE",
+		"coverFileName": "8.svg"
+	}
 ]

@@ -1,4 +1,4 @@
-const { database } = require('../database');
+const { rooms } = require('../database/rooms');
 const { generateQRCodeForRoom } = require('../modules/qr-code-generator');
 
 exports.generateQRCodeForRoom = function (request, response) {
@@ -11,7 +11,7 @@ exports.generateQRCodeForRoom = function (request, response) {
 	const marginAsIntegerOrNaN = parseInt(marginFromQuery, 10);
 	const margin = isNaN(marginAsIntegerOrNaN) ? size / 4 : marginAsIntegerOrNaN;
 
-	const selectedRoom = database[roomIndex];
+	const selectedRoom = rooms[roomIndex];
 
 	generateQRCodeForRoom({
 		size,
