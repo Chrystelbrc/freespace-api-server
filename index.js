@@ -17,7 +17,7 @@ const app = express();
 const httpsServer = https.createServer(
 	{
 		key: fs.readFileSync('./cert/server.key'),
-		cert: fs.readFileSync('./cert/server.crt'),
+		cert: fs.readFileSync('./cert/server.cert'),
 	},
 	app
 );
@@ -49,6 +49,6 @@ app.put('/update-room-status/:roomIndex/:userName', (request, response) =>
 
 app.get('/qr-code/:roomIndex.png', generateQRCodeForRoom);
 
-httpsServer.listen(3001, () => {
-	console.log('App listening on port 3001');
+httpsServer.listen(3000, () => {
+	console.log('App listening on port 3000');
 });
