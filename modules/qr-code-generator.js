@@ -4,7 +4,7 @@ const coolImages = require('cool-images');
 
 const fs = require('fs');
 
-const QR_CODE_PREFIX = 'freespace-room#';
+// const QR_CODE_PREFIX = 'freespace-room#';
 
 const fetchRandomCoolImage = ({ size }) => {
 	const backgroundImageUrl = coolImages.one(size, size, false, false);
@@ -20,7 +20,7 @@ const fetchRandomCoolImage = ({ size }) => {
 };
 
 exports.generateQRCodeForRoom = ({ roomIndex, size, margin }) => {
-	const qrCodeText = `${QR_CODE_PREFIX}${roomIndex}`;
+	const qrCodeText = `${process.env.ORIGIN_URL}/scan?roomIndex=${roomIndex}`;
 
 	// return fetchRandomCoolImage({ size }).then((response) => {
 	// const backgroundImageBuffer = Buffer.from(response.data, 'base64');
